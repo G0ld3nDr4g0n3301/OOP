@@ -1,22 +1,20 @@
 # In this version we are simply solving the task.Without OOP.:)
 n,m = input().split(' ')
-
-n = int(n)
-m = int(m)
+try:
+	n = int(n)
+	m = int(m)
+except:
+	print('Борис,не нанимай на это дело идиотов!')
 Dict = {}
-i = 0
-while i != n:
+for i in range(0,n):
 	name = input()
 	List = input().split(' ')
-	i2 = 0
-	while i2 != m:
+	for i in range(0,m):
 		try:
-			List[i2] = float(List[i2])
+			List[i] = float(List[i])
 		except:
-			print('Не шути со мной,придурок!!!')
-		i2 += 1
+			print('Не шути со мной!!!')
 	Dict[name] = sum(List)
-	i += 1
 min1 = min(Dict.values())
 for key,v in Dict.items():
 	if v == min1:
